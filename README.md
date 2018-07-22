@@ -11,6 +11,7 @@ The script test out the different classifers and determine its accuracy. Then th
 
 ## Usage
 Run the script in the terminal
+```
 python gender_class.py
 ```
 
