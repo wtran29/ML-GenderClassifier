@@ -2,7 +2,7 @@ from sklearn import tree, neighbors, svm, metrics, linear_model
 import numpy as np
 
 
-# [height, weight, shoe size]
+# [height, width, shoe size]
 X = [[181, 80, 44], [177, 70, 43], [160, 60, 38], [154, 54, 37], [166, 65, 40], [190, 90, 47], [175, 64, 39], [177, 70, 40], [159, 55, 37],
      [171, 75, 42], [181, 85, 43]]
 
@@ -21,7 +21,6 @@ clf_pt = clf_pt.fit(X, Y)
 neigh = neigh.fit(X, Y)
 
 # Testing the same data
-
 predict_clf = clf.predict(X)
 acc_dtc = metrics.accuracy_score(Y, predict_clf) * 100
 result_dtc = clf.predict([[190, 70, 43]])
@@ -48,7 +47,7 @@ print(result_knn)
 
 # Determine which classifier is best
 index = np.argmax([acc_svc, acc_pt, acc_knn])
-classifiers = {0: 'SVC', 1: 'Perceptron', 2: 'KNN'}
+classifiers = {0: 'DTC', 1: 'SVC', 2: 'Perceptron', 3: 'KNN'}
 print('Best Gender Classifier is {}'.format(classifiers[index]))
 
 
